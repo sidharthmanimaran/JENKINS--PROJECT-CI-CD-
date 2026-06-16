@@ -15,16 +15,16 @@ pipeline {
                 sh '''
                 ssh -i /var/lib/jenkins/keypair.pem \
                 -o StrictHostKeyChecking=no \
-                ubuntu@3.109.155.163 "mkdir -p /tmp/website"
+                ubuntu@52.66.88.116 "mkdir -p /tmp/website"
 
                 scp -i /var/lib/jenkins/keypair.pem \
                 -o StrictHostKeyChecking=no \
                 -r * \
-                ubuntu@3.109.155.163:/tmp/website/
+                ubuntu@52.66.88.116:/tmp/website/
 
                 ssh -i /var/lib/jenkins/keypair.pem \
                 -o StrictHostKeyChecking=no \
-                ubuntu@3.109.155.163 "
+                ubuntu@52.66.88.116 "
                 sudo cp -r /tmp/website/* /var/www/html/
                 sudo systemctl reload nginx
                 "
